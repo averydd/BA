@@ -26,7 +26,7 @@ def load_data_to_postgres(data, table_name, engine):
     metadata = MetaData()
     table = Table(table_name, metadata, autoload_with=engine)
     try:
-        with engine.connect() as conn:
+        with engine.begin() as conn:
             conn.execute(table.insert(), data)
             print(f"Loaded {len(data)} records into {table_name}")
     except IntegrityError as e:

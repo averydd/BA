@@ -31,5 +31,4 @@ def extract_mongo_data(database_name, collection_name, query={}, limit=100):
         print(f"Error querying {collection_name} in {database_name}: {e}")
         return []
     finally:
-        if client:
-            client.close()
+        client.close()
