@@ -33,7 +33,7 @@ def extract_mongo_data(database_name, collection_name, query={}, limit=100):
     finally:
         client.close()
 
-def extract_transactions_with_blocks(mongo_database, block_field_value):
+"""def extract_transactions_with_blocks(mongo_database, block_field_value):
     """
     Fetches transactions filtered by a related field in the blocks collection.
 
@@ -69,4 +69,4 @@ def extract_transactions_with_blocks(mongo_database, block_field_value):
 # Use the function
 block_field_value = "desired_value"
 mongo_transactions_data = extract_transactions_with_blocks(mongo_database, block_field_value)
-
+"""
