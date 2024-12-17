@@ -43,6 +43,16 @@ CREATE TABLE transactions (
     item_timestamp TIMESTAMP
 );
 
+DROP TABLE IF EXISTS token_transfers CASCADE;
+CREATE TABLE token_transfers (
+    contract_address VARCHAR(255),
+    transaction_hash VARCHAR(255),
+    log_index INT,
+    block_number INT,
+    from_address VARCHAR(255),
+    to_address VARCHAR(255),
+    value DECIMAL
+);
 
 DROP TABLE IF EXISTS internal_transactions CASCADE;
 CREATE TABLE internal_transactions (
